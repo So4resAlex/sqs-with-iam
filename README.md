@@ -1,5 +1,7 @@
 ### Terraform SQS module
 
-#### Usage
 
-Crie um arquivo de importação chamdo ``main.tf``
+To-do
+
+- [ ] Config pre-commit ci 
+- [ ] Create a README with usage example
