@@ -1,0 +1,30 @@
+variable "queue_name" {
+  description = "The name from queue to be created"
+  type        = string
+}
+
+variable "policy_sqs_name" {
+  description = "The name from policy queue"
+  type        = string
+}
+
+variable "user_arn" {
+  description = "User ARN for binding"
+  type        = string
+}
+
+variable "enviroment" {
+  description = "Enviroment"
+  type        = string
+}
+
+variable "sender_user_arn" {
+  description = "The sender user from queue"
+  type        = string
+}
+
+variable "receiver_user_arn" {
+  description = "The receiver user from queue"
+  type        = string
+
+}
