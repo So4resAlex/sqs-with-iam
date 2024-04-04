@@ -22,3 +22,9 @@ variable "sender_user_arn" {
   description = "The sender user from queue"
   type        = string
 }
+
+variable "receiver_user_arn" {
+  description = "The receiver user from queue"
+  type        = string
+
+}
