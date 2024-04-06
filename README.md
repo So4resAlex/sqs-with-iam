@@ -43,4 +43,4 @@ To-do
 | <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | The name from queue to be created | `string` | n/a | yes |
 | <a name="input_receiver_user_arn"></a> [receiver\_user\_arn](#input\_receiver\_user\_arn) | The receiver user from queue | `string` | n/a | yes |
 | <a name="input_sender_user_arn"></a> [sender\_user\_arn](#input\_sender\_user\_arn) | The sender user from queue | `string` | n/a | yes |
-<!-- END_TF_DOCS -->
+<!-- END_TF_DOCS --
