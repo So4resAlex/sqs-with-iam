@@ -1,18 +1,21 @@
 variable "create_sender" {
-  description = "Indica se o user sender sera criado ou não"
+  description = "Indicates whether the user sender will be created or not"
   type = bool
 }
 
 variable "create_receiver" {
-  description = "Indica se o user sender sera criado ou não"
+  description = "Indicates whether the user receiver will be created or not"
+  type = bool
 }
 
 variable "sender_user_name" {
-  description = "Nome do user sender caso seja criado"
+  description = "Name of the user sender if created."
+  type = string
 }
 
 variable "receiver_user_name" {
-  
+    description = "Name of the user receiver if created."
+    type = string
 }
 
 variable "enviroment" {
@@ -21,24 +24,24 @@ variable "enviroment" {
 }
 
 variable "sender_user_arn" {
-  description = "ARN do usuário sender, usado se create_sender for false."
+  description = "ARN of the sender user, used if create_sender is false."
   type        = string
   default     = ""
 }
 
 variable "receiver_user_arn" {
-  description = "ARN do usuário receiver, usado se create_receiver for false."
+  description = "ARN of the receiver user, used if create_sender is false."
   type        = string
   default     = ""
 }
 
 variable "queue_name" {
-  description = "Queue name"
+  description = "Name of the queue to be created."
   type = string
 }
 
 variable "policy_sqs_name" {
-    description = "Terraform policy"
+    description = "Name of the policy to be created."
     type = string
   
 }
