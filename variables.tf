@@ -11,11 +11,13 @@ variable "create_receiver" {
 variable "sender_user_name" {
   description = "Name of the user sender if created."
   type = string
+  default = ""
 }
 
 variable "receiver_user_name" {
     description = "Name of the user receiver if created."
     type = string
+    default = ""
 }
 
 variable "enviroment" {
