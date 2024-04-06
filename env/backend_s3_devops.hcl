@@ -1,3 +1,3 @@
-bucket = "terraform-lab-alex"
-key    = "devops/terraform.tfstate"
-region = "us-east-1"
+bucket = "{bucket name}"
+key    = "terraform.tfstate"
+region = "{region}" 
