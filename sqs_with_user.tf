@@ -1,17 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-        source = "hashicorp/aws"
-        version = "5.37.0"
-    }   
-  }
-  backend "s3" {} #Init with -backend-config parameter 
-}
-provider "aws" {
-  region = "us-east-1"
-}
-
-
 resource "aws_iam_user" "sender" {
   count = var.create_sender ? 1 : 0
   name = var.sender_user_name
