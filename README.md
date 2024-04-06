@@ -57,7 +57,7 @@ provider "aws" {
 
 
 module "sqs_and_iam" {
-  source = "git::git@github.com:So4resAlex/sqs-with-iam.git" # Atualize o caminho conforme necessário
+  source = "git::git@github.com:So4resAlex/sqs-with-iam.git" 
 
   create_sender   = false
   create_receiver = false
