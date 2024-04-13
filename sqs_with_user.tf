@@ -1,6 +1,6 @@
 resource "aws_iam_user" "sender" {
   count = var.create_sender ? 1 : 0
-  name = var.sender_user_name
+  name  = var.sender_user_name
   tags = {
     Enviroment = var.enviroment
   }
@@ -8,7 +8,7 @@ resource "aws_iam_user" "sender" {
 
 resource "aws_iam_user" "receiver" {
   count = var.create_receiver ? 1 : 0
-  name = var.receiver_user_name
+  name  = var.receiver_user_name
   tags = {
     Enviroment = var.enviroment
   }
@@ -36,24 +36,24 @@ resource "aws_sqs_queue_policy" "terraform_queue_policy" {
       {
         Effect    = "Allow"
         Principal = { AWS = var.create_receiver ? aws_iam_user.receiver[0].arn : var.receiver_user_arn }
-        Action    = [
+        Action = [
           "sqs:ChangeMessageVisibility",
           "sqs:DeleteMessage",
           "sqs:ReceiveMessage",
           "sqs:GetQueueUrl",
           "sqs:GetQueueAttributes"
         ]
-        Resource  = aws_sqs_queue.terraform_queue.arn
+        Resource = aws_sqs_queue.terraform_queue.arn
       },
       {
         Effect    = "Allow"
         Principal = { AWS = var.create_sender ? aws_iam_user.sender[0].arn : var.sender_user_arn }
-        Action    = [
+        Action = [
           "sqs:SendMessage",
           "sqs:GetQueueUrl",
           "sqs:GetQueueAttributes"
         ]
-        Resource  = aws_sqs_queue.terraform_queue.arn
+        Resource = aws_sqs_queue.terraform_queue.arn
       }
     ]
   })
