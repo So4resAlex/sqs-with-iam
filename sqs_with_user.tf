@@ -21,8 +21,12 @@ resource "aws_sqs_queue" "terraform_queue" {
   receive_wait_time_seconds  = 20
   message_retention_seconds  = 1209600
   max_message_size           = 2048
+  redrive_policy = var.create_dlq ? jsonencode({
+    deadLetterTargetArn = aws_sqs_queue.terraform_dlq[0].arn
+    maxReceiveCount     = 5
+  }) : null
   tags = {
-    Environment = "Test"
+    Environment = var.enviroment
   }
 }
 
@@ -59,3 +63,12 @@ resource "aws_sqs_queue_policy" "terraform_queue_policy" {
   })
 }
 
+resource "aws_sqs_queue" "terraform_dlq" {
+  count = var.create_dlq ? 1 : 0
+
+  name                      = "${var.queue_name}-dlq"
+  message_retention_seconds = 1209600
+  tags = {
+    Environment = var.enviroment
+  }
+}

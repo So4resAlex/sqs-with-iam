@@ -47,3 +47,11 @@ variable "policy_sqs_name" {
   type        = string
 
 }
+
+variable "create_dlq" {
+  description = "Whether to create a Dead Letter Queue"
+  type        = bool
+  default     = false
+}
+
+
